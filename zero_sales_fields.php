@@ -1,0 +1,10 @@
+<?php /* Shared optional fields for a new invoice; validation applies when zero/exempt lines exist. */ ?>
+<details style="margin:18px 0;padding:16px;border:1px solid #cbd9e8;border-radius:9px;background:#f5f9fd" <?= !empty($form['zero_confirmed'])?'open':'' ?>>
+<summary style="font-weight:700;cursor:pointer">0% / maksuvaba käibe alus (täida vastavate maksukoodide korral)</summary>
+<p>Vali arverea maksukoodist eksport, EL kaup, EL teenus või konkreetne maksuvabastus. Kliendi riik üksi ei määra käsitlust. EL kaubamüügil täida ka tegelik kauba üleandmise/lähetamise kuupäev. Üldised vanad „Eesti 0%” ja „Maksuvaba” koodid vajavad täpsustamist.</p>
+<p><label>Käibe maksustamiskuupäev <input type="date" name="zero_tax_date" value="<?= h($form['zero_tax_date']??$form['invoice_date']??'') ?>"></label><br><small>Määrab 0% / maksuvaba müügi KMD ja VD perioodi; tühjaks jätmisel kasutatakse arve kuupäeva. Ettemaks ei ole EL kaubakäive.</small></p>
+<p><label>Tõendi / tollidokumendi / veodokumendi viide<br><input style="width:100%" name="zero_evidence" maxlength="500" value="<?= h($form['zero_evidence']??'') ?>"></label></p>
+<p><label>Täpne seaduslik alus (muu 0%, muu maksuvaba ja kaubaveo korral)<br><input style="width:100%" name="zero_basis" maxlength="500" value="<?= h($form['zero_basis']??'') ?>" placeholder="Näiteks KMS paragrahv, lõige ja punkt ning tehingu selgitus"></label></p>
+<p><label><input type="checkbox" name="zero_confirmed" value="1" <?= !empty($form['zero_confirmed'])?'checked':'' ?>> Kontrollisin maksukäsitluse tingimusi ja tõendeid. EL müügil kontrollisin kliendi KMKR kehtivust; teenus kuulub saaja riigis maksustamisele, kui valisin VD-sse kuuluva teenuse. Maksuvabastuse korral ei ole tegemist erandiga ega valiku alusel maksustatud tehinguga.</label></p>
+<p><small>Automaatne vormingukontroll ei ole VIES-i kehtivuskontroll. Arvele lisatakse maksukäsitluse märkus. Eraldi erikorrad (OSS, kolmnurktehing, nõudmiseni varu, tax-free ja uue transpordivahendi erijuht) ei kuulu tavalise EL müügi alla.</small></p>
+</details>
