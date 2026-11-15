@@ -1,0 +1,205 @@
+RAAMATUPIDAMISE PROGRAMMI KASUTUSELEVÕTU JUHEND (Windows + XAMPP)
+===================================================================
+
+See juhend kirjeldab programmi kohalikku käivitamist Windowsi arvutis.
+Sinu praeguses paigalduses on XAMPP kaustas C:\xampp82 ja programm asub
+kaustas C:\xampp82\htdocs\raamatupidamine. Kui kasutad teist XAMPP-i
+kausta või Apache porti, muuda allpool vastavaid aadresse.
+
+1. XAMPP-I ALLALAADIMINE JA PAIGALDAMINE
+----------------------------------------
+
+1. Ava Apache Friendsi ametlik allalaadimisleht:
+   https://www.apachefriends.org/download.html
+2. Vali Windowsile sobiv XAMPP. Selle rakenduse praegune paigaldus kasutab
+   PHP 8.2.12, seega vali võimaluse korral PHP 8.2 sisaldav versioon.
+   Ära laadi installerit alla juhuslikult veebilehelt.
+3. Käivita allalaaditud installer. Windows võib küsida luba muudatuste
+   tegemiseks; kontrolli, et käivitad Apache Friendsi XAMPP-i installeri.
+4. Paigalduskaustaks sobib tavaliselt C:\xampp. Selles arvutis on kasutusel
+   C:\xampp82. Jäta meelde, millise kausta valisid.
+5. Vali vähemalt Apache, MySQL/MariaDB, PHP ja phpMyAdmin. Need on vajalikud
+   programmi veebilehe ja andmebaasi jaoks.
+6. Lõpeta paigaldus. Kui installer pakub Control Paneli kohe avamist, jäta
+   see valituks.
+
+XAMPP-i veebifailid asuvad alamkaustas htdocs. Näiteks C:\xampp82\htdocs.
+Programm peab asuma selle sees kaustas raamatupidamine:
+   C:\xampp82\htdocs\raamatupidamine
+
+2. PROGRAMMI FAILIDE PAIGUTAMINE
+-------------------------------
+
+1. Kopeeri kogu programmi kaust raamatupidamine XAMPP-i htdocs-kausta.
+   Ära kopeeri ainult üksikuid PHP-faile: vaja on kogu kausta alamkaustadega.
+2. Kontrolli, et aadress oleks näiteks:
+   C:\xampp82\htdocs\raamatupidamine\index.php
+3. Kui kaustas on Juhendid, saad juhendifailid sinna kopeerida.
+4. Andmebaasi SQL-fail pane ajutiselt kergesti leitavasse kohta, näiteks
+   töölauale. Pärast importi võib faili panna programmi Juhendid-kausta.
+
+TÄHTIS: enne SQL-faili importimist kontrolli, et see sisaldab soovitud
+andmeid. Programmi proovimiseks tehtud või tühjendatud andmebaasi eksport
+ei pruugi sisaldada päris ettevõtte kandeid. Hoia täielikku varukoopiat
+eraldi turvalises kohas ja ära kirjuta vana varukoopiat üle.
+
+3. XAMPP-I JUHTPANEELI AVAMINE JA TÖÖLAUA OTSETee
+------------------------------------------------
+
+XAMPP-i juhtpaneel on tavaliselt Start-menüüs:
+   Start -> kirjuta otsingusse XAMPP Control Panel -> Ava
+
+Seda saab avada ka otse installikaustast, näiteks:
+   C:\xampp82\xampp-control.exe
+
+Töölauale otsetee tegemine Windows 10/11-s:
+1. Ava File Explorer ja mine kausta C:\xampp82.
+2. Leia fail xampp-control.exe.
+3. Paremklõps failil -> Kuva rohkem suvandeid (kui see on olemas) ->
+   Saada -> Töölaud (loo otsetee).
+   Kui menüüs seda valikut pole, vali Loo otsetee ja liiguta loodud otsetee
+   töölauale.
+
+Kui installisid XAMPP-i mujale, asenda näites C:\xampp82 enda kaustaga.
+
+4. APACHE JA MYSQL-I KÄIVITAMINE
+-------------------------------
+
+1. Ava XAMPP Control Panel. Kui portide või teenuste käivitamine ebaõnnestub,
+   sulge paneel ja ava see administraatorina (paremklõps -> Käivita
+   administraatorina).
+2. Juhtpaneeli tabelis leia read Apache ja MySQL.
+3. Vajuta Apache rea paremal Start-nuppu.
+4. Vajuta MySQL rea paremal Start-nuppu.
+5. Kui mõlemad töötavad, näitab juhtpaneel nende juures aktiivset olekut
+   (sageli roheline taust ja Stop-nupp).
+
+Konsoolis käske pole tavaliseks käivitamiseks vaja. XAMPP-i juhtpaneel teeb
+sama töö Start-nuppudega. Ära käivita samal ajal teist Apache- või
+MySQL/MariaDB-serverit, sest need võivad kasutada samu porte.
+
+Programmi kasutamiseks peavad mõlemad teenused töötama:
+   Apache = PHP-lehtede kuvamine
+   MySQL = programmi andmebaas
+
+Kui Start-nupp lülitub kohe tagasi või logis on portide viga, võib port olla
+juba mõne teise programmi kasutuses. Ära muuda porte juhuslikult: kontrolli
+XAMPP-i teadet või küsi enne abi.
+
+5. ANDMEBAASI AVAMINE JA LOOMINE
+-------------------------------
+
+1. Kui Apache ja MySQL töötavad, ava brauseris phpMyAdmin. Praeguse seadistuse
+   korral on aadress:
+   http://localhost:8082/phpmyadmin
+   Kui Apache kasutab vaikimisi porti 80, on aadress:
+   http://localhost/phpmyadmin
+2. phpMyAdminis ava vasakult või ülamenüüst Andmebaasid (Databases).
+3. Sisesta uue andmebaasi nimeks täpselt:
+   raamatupidamine
+4. Märgistikuks vali utf8mb4 ning võrdluseks utf8mb4_estonian_ci, kui see
+   valik on olemas. Imporditav SQL-fail võib määrata võrdluse ise.
+5. Vajuta Loo (Create).
+
+Ära loo ega impordi andmebaasi nimega phpmyadmin. See on phpMyAdmini enda
+valikuline seadistuste andmebaas, mitte raamatupidamisprogrammi andmebaas.
+
+6. SQL-FAILI IMPORTIMINE
+-----------------------
+
+1. Vali phpMyAdmini vasakust loendist andmebaas raamatupidamine.
+2. Ava ülamenüüst Impordi (Import).
+3. Vali Browse/Choose file ja leia oma raamatupidamine.sql fail.
+4. Vorminguks jäta SQL.
+5. Vajuta allosas Impordi/Go.
+6. Oota teade, et import õnnestus. Seejärel kontrolli vasakul, et tabelid
+   ilmusid raamatupidamine andmebaasi alla.
+
+Kui andmebaasis on juba tabelid või vanad andmed, ära impordi faili nende
+peale enne, kui oled teinud praegusest andmebaasist varukoopia. Täis-eksport
+ja algusest alustamiseks mõeldud tühjendatud SQL-fail võivad olla erinevad.
+
+7. PROGRAMMI ANDMEBAASIÜHENDUS
+-----------------------------
+
+Programm peab teadma andmebaasi nime, serverit, kasutajanime ja salasõna.
+Need seaded asuvad programmi andmebaasiühenduse failis (tavaliselt db.php).
+Kontrolli selle faili tegelikku asukohta enne muutmist.
+
+Tüüpilised kohaliku XAMPP-i väärtused on:
+   server: localhost
+   andmebaas: raamatupidamine
+   kasutaja: root
+   salasõna: tühi ainult juhul, kui sinu MariaDB root-kasutajal pole salasõna
+
+Kasuta täpselt neid kasutaja- ja salasõnaandmeid, mis sinu XAMPP-i
+andmebaasis päriselt kehtivad. Ära kleebi andmebaasi salasõna avalikku
+juhendisse ega jaga seda teistega. Kui db.php puudub või ühendusandmed ei
+klapi, ära kustuta ega asenda teisi faile; kontrolli programmi seadistust.
+
+8. PROGRAMMI AVAMINE BRAUSERIS
+-----------------------------
+
+Kui sinu Apache port on 8082, kirjuta aadressiribale:
+   http://localhost:8082/raamatupidamine/
+
+Kui Apache kasutab vaikimisi porti 80, kasuta:
+   http://localhost/raamatupidamine/
+
+Sisselogimiseks kasuta programmi olemasolevat kasutajakontot. Parooli ei
+salvestata SQL-faili tavatekstina: rakendus salvestab parooli turvalise
+räsina. Kui andmebaasi koopia sisaldab kasutajaid, peaksid kasutama nende
+kontodega seotud paroole. Uues tühjas andmebaasis tuleb esmalt luua
+kasutajakonto programmi juhendi järgi.
+
+9. IGAPÄEVANE KÄIVITAMINE JA SULGEMINE
+------------------------------------
+
+Programmi avamiseks:
+1. Ava XAMPP Control Panel.
+2. Käivita Apache ja MySQL.
+3. Ava brauseris programmi aadress.
+
+Kui töö lõpetad, sulge rakendus brauseris ning vajuta XAMPP-i juhtpaneelis
+MySQL-i ja Apache juures Stop. Arvuti väljalülitamisel salvesta töö enne.
+Ära kustuta ega liiguta jooksva MySQL-serveri andmekausta käsitsi.
+
+10. VARUKOOPIAD JA UUELE ARVUTILE ÜLEKOLIMINE
+--------------------------------------------
+
+Programmi kaustast üksi ei piisa: raamatupidamise andmed asuvad eraldi
+MariaDB andmebaasis. Tee regulaarselt mõlemast varukoopia:
+   1) programmi kaust koos PHP-failide, laadimiste ja juhenditega;
+   2) phpMyAdmini kaudu eksporditud täielik raamatupidamine.sql.
+
+Andmebaasi varukoopia tegemiseks vali phpMyAdminis raamatupidamine ->
+Ekspordi (Export) -> SQL -> Go. Kontrolli, et ekspordifail sisaldab nii
+tabelite struktuure kui ka andmeid. Salvesta koopia arvutist eraldi kohas
+(näiteks välisele kettale või usaldusväärsesse pilveteenusesse) ning hoia
+alles mitu kuupäevaga versiooni.
+
+Uues arvutis paigalda XAMPP, kopeeri programmi kaust htdocs-i, loo
+raamatupidamine andmebaas, impordi täielik SQL-varukoopia ning kontrolli
+db.php ühendusandmeid ja Apache porti. Alles seejärel ava programm.
+
+Kui XAMPP-i andmebaas ei käivitu, ära asenda data-kausta ega tõsta ibdata1
+faili varukoopiast pimesi: nii võib andmebaasi rikkuda. Peata MySQL ja tee
+andmefailidest koopia enne taastamise katset. Turvalisem taastamisviis on
+tavaliselt puhas XAMPP-i andmebaas ja phpMyAdmini täieliku SQL-eksportfaili
+import.
+
+KIIRE MEELDEJÄTJA
+-----------------
+
+Juhtpaneel: C:\xampp82\xampp-control.exe
+Käivita:    Apache ja MySQL
+phpMyAdmin: http://localhost:8082/phpmyadmin
+Programm:   http://localhost:8082/raamatupidamine/
+Andmebaas:  raamatupidamine
+SQL-fail:   vali phpMyAdminis raamatupidamine -> Impordi
+
+Kasulikud ametlikud viited:
+XAMPP allalaadimine: https://www.apachefriends.org/download.html
+XAMPP Windowsi KKK: https://www.apachefriends.org/faq_windows.html
+
+Juhendi uuendamise kuupäev: 08.10.2026

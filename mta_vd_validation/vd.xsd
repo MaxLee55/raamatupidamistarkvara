@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema elementFormDefault="unqualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:vd="http://www.emta.ee/VD/xsd/webimport/v1"
+	targetNamespace="http://www.emta.ee/VD/xsd/webimport/v1"
+	>
+
+	<!-- Root element of the file -->
+	<xs:element name="VD_deklaratsioon" type="vd:VD_deklaratsioon_Type" />
+
+	<!-- Complex types -->
+	<xs:complexType name="VD_deklaratsioon_Type">
+		<xs:sequence>
+			<xs:element name="deklareerijaKood" type="vd:deklareerijaKood_Type" />
+			<xs:element name="perioodAasta" type="vd:perioodAasta_Type" />
+			<xs:element name="perioodKuu" type="vd:perioodKuu_Type" />
+			<xs:element name="aruandeRead" type="vd:aruandeRead_Type" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="aruandeRead_Type">
+		<xs:sequence>
+			<xs:element name="aruandeRida" type="vd:aruandeRida_Type"
+				minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="aruandeRida_Type">
+		<xs:sequence>
+			<xs:element name="kmkrKood" type="vd:kmkrKood_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element minOccurs="0" maxOccurs="1" name="kaup" type="xs:integer" />
+			<xs:element minOccurs="0" maxOccurs="1" name="kolmnurktehing"
+				type="xs:integer" />
+			<xs:element minOccurs="0" maxOccurs="1" name="teenusteMyyk"
+				type="xs:integer" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="kmkrKood_Type">
+		<xs:simpleContent>
+			<xs:extension base="vd:kmkrNumber_Type">
+				<xs:attribute name="riik" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="2" />
+							<xs:maxLength value="2" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<!-- simple types -->
+	<xs:simpleType name="kmkrNumber_Type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Za-z0-9\+\*]{1,12}" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="perioodKuu_Type">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1" />
+			<xs:maxInclusive value="12" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="deklareerijaKood_Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="11" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="perioodAasta_Type">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="\d{4}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

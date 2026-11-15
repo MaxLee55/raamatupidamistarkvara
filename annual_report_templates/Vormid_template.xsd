@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://temporaryEntryFile" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-201000/cal_StatementOfFinancialPosition_role-201010.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-201000/def_StatementOfFinancialPosition_role-201010.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-201000/pre_StatementOfFinancialPosition_role-201010.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-301000/cal_IncomeStatementScheme2_role-301022.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-301000/def_IncomeStatementScheme2_role-301022.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-301000/pre_IncomeStatementScheme2_role-301022.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-801000/cal_NoteAccountingPolicies_role-801000.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-801000/def_NoteAccountingPolicies_role-801000.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-801000/pre_NoteAccountingPolicies_role-801000.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-821000/cal_NoteLoanCommitments_role-821000.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-821000/def_NoteLoanCommitments_role-821000.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-821000/pre_NoteLoanCommitments_role-821000.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-839000/cal_NoteLaborExpense_role-839000.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-839000/def_NoteLaborExpense_role-839000.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-839000/pre_NoteLaborExpense_role-839000.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-843000/cal_NoteRelatedParties_role-843000.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-843000/def_NoteRelatedParties_role-843000.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-843000/pre_NoteRelatedParties_role-843000.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-702000/cal_ProfitDistributionProposal_role-702010.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-702000/def_ProfitDistributionProposal_role-702010.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-702000/pre_ProfitDistributionProposal_role-702010.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-703000/cal_ProfitDistributionResolution_role-703010.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-703000/def_ProfitDistributionResolution_role-703010.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/role-703000/pre_ProfitDistributionResolution_role-703010.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/label/et-gaap_2026-01-01-label-et.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/label/et-gaap_2026-01-01-label-en.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="et-gaap_2026-01-01/reference/et-gaap_2026-01-01-reference.xml" xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://xbrl.eesti.ee/role/et-gaap_2026-01-01/role-201000" schemaLocation="et-gaap_2026-01-01/role-201000/role-201000.xsd"/>
+  <xsd:import namespace="http://xbrl.eesti.ee/role/et-gaap_2026-01-01/role-301000" schemaLocation="et-gaap_2026-01-01/role-301000/role-301000.xsd"/>
+  <xsd:import namespace="http://xbrl.eesti.ee/role/et-gaap_2026-01-01/role-801000" schemaLocation="et-gaap_2026-01-01/role-801000/role-801000.xsd"/>
+  <xsd:import namespace="http://xbrl.eesti.ee/role/et-gaap_2026-01-01/role-821000" schemaLocation="et-gaap_2026-01-01/role-821000/role-821000.xsd"/>
+  <xsd:import namespace="http://xbrl.eesti.ee/role/et-gaap_2026-01-01/role-839000" schemaLocation="et-gaap_2026-01-01/role-839000/role-839000.xsd"/>
+  <xsd:import namespace="http://xbrl.eesti.ee/role/et-gaap_2026-01-01/role-843000" schemaLocation="et-gaap_2026-01-01/role-843000/role-843000.xsd"/>
+  <xsd:import namespace="http://xbrl.eesti.ee/role/et-gaap_2026-01-01/role-702000" schemaLocation="et-gaap_2026-01-01/role-702000/role-702000.xsd"/>
+  <xsd:import namespace="http://xbrl.eesti.ee/role/et-gaap_2026-01-01/role-703000" schemaLocation="et-gaap_2026-01-01/role-703000/role-703000.xsd"/>
+  <xsd:import namespace="http://xbrl.eesti.ee/taxonomy/et-gaap_2026-01-01" schemaLocation="et-gaap-cor_2026-01-01.xsd"/>
+</xsd:schema>
