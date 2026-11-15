@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS purchase_import_defaults (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    company_id INT UNSIGNED NOT NULL,
+    contact_id INT UNSIGNED NOT NULL,
+    description_key CHAR(64) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+    description VARCHAR(500) NOT NULL,
+    account_id INT UNSIGNED DEFAULT NULL,
+    product_id INT UNSIGNED DEFAULT NULL,
+    warehouse_id INT UNSIGNED DEFAULT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY uq_purchase_import_default_line (company_id, contact_id, description_key),
+    KEY ix_purchase_import_default_account (account_id),
+    KEY ix_purchase_import_default_product (product_id),
+    KEY ix_purchase_import_default_warehouse (warehouse_id),
+    CONSTRAINT fk_purchase_import_defaults_company FOREIGN KEY (company_id) REFERENCES companies (id) ON DELETE CASCADE,
+    CONSTRAINT fk_purchase_import_defaults_contact FOREIGN KEY (contact_id) REFERENCES contacts (id) ON DELETE CASCADE,
+    CONSTRAINT fk_purchase_import_defaults_account FOREIGN KEY (account_id) REFERENCES accounts (id) ON DELETE SET NULL,
+    CONSTRAINT fk_purchase_import_defaults_product FOREIGN KEY (product_id) REFERENCES inventory_products (id) ON DELETE SET NULL,
+    CONSTRAINT fk_purchase_import_defaults_warehouse FOREIGN KEY (warehouse_id) REFERENCES inventory_warehouses (id) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_estonian_ci;
